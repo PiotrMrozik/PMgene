@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Engine">
+      <UniqueIdentifier>{9da3f533-5750-4393-9841-dd6e81e9395a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Components">
+      <UniqueIdentifier>{c7b56d81-e169-4196-ac34-e8c617381bf7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Systems">
+      <UniqueIdentifier>{8b3a20c1-54a9-4e0a-9f84-120c8bfb5245}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Core">
+      <UniqueIdentifier>{0950938f-82f4-4988-873a-4cfa9e222311}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Core\Component">
+      <UniqueIdentifier>{26139d5b-fc62-4fb1-8edc-d6d3438ead28}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Core\Component\ComponentArray">
+      <UniqueIdentifier>{82e4df06-e1df-4ddd-993f-56d3f7022821}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Core\System">
+      <UniqueIdentifier>{6711d3cc-a219-4ad1-97fc-6690feb9768a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Core\Managers">
+      <UniqueIdentifier>{2096873f-ec5d-412e-95bc-d105f4b678ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Core\Managers\EntityManager">
+      <UniqueIdentifier>{7c4cce1b-57db-4c67-96c9-56671c32227c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Core\Managers\ComponentManager">
+      <UniqueIdentifier>{7b49b1de-6acb-4a12-8288-7748f97b051c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Core\Managers\SystemManager">
+      <UniqueIdentifier>{0c87e4a0-52d3-4cc6-8f52-4726b3949882}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Core\Managers\CommunicationManager">
+      <UniqueIdentifier>{85f591e9-1a22-4979-9578-d06c275fbfeb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Core\Managers\LogManager">
+      <UniqueIdentifier>{37d5c9a0-a180-4c60-96c3-8dae9cbd50b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Core\Utils">
+      <UniqueIdentifier>{a482c871-1663-403e-a626-8e9513c52897}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Core\Utils\Message">
+      <UniqueIdentifier>{8a1ee602-629f-417f-bb14-d4bc1c398856}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Engine\Core\Component\Component.cpp">
+      <Filter>Engine\Core\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Core\Managers\EntityManager\EntityManager.cpp">
+      <Filter>Engine\Core\Managers\EntityManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Core\Managers\ComponentManager\ComponentManager.cpp">
+      <Filter>Engine\Core\Managers\ComponentManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Core\Component\ComponentArray\IComponentArray.cpp">
+      <Filter>Engine\Core\Component\ComponentArray</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Core\Component\ComponentArray\ComponentArray.cpp">
+      <Filter>Engine\Core\Component\ComponentArray</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Core\Managers\SystemManager\SystemManager.cpp">
+      <Filter>Engine\Core\Managers\SystemManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Core\Managers\CommunicationManager\CommunicationManager.cpp">
+      <Filter>Engine\Core\Managers\CommunicationManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Core\Utils\ISubscriber.cpp">
+      <Filter>Engine\Core\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Core\Managers\LogManager\LogManager.cpp">
+      <Filter>Engine\Core\Managers\LogManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Core\Utils\ISender.cpp">
+      <Filter>Engine\Core\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Core\Utils\Message\Message.cpp">
+      <Filter>Engine\Core\Utils\Message</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Core\System\ISystem.cpp">
+      <Filter>Engine\Core\System</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Engine.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Engine\Core\Component\Component.h">
+      <Filter>Engine\Core\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Core\Managers\EntityManager\EntityManager.h">
+      <Filter>Engine\Core\Managers\EntityManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Core\System\ISystem.h">
+      <Filter>Engine\Core\System</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Core\Managers\ComponentManager\ComponentManager.h">
+      <Filter>Engine\Core\Managers\ComponentManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Core\Utils\Globals.h">
+      <Filter>Engine\Core\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Core\Component\ComponentArray\IComponentArray.h">
+      <Filter>Engine\Core\Component\ComponentArray</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Core\Component\ComponentArray\ComponentArray.h">
+      <Filter>Engine\Core\Component\ComponentArray</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Core\Managers\SystemManager\SystemManager.h">
+      <Filter>Engine\Core\Managers\SystemManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Core\Managers\CommunicationManager\CommunicationManager.h">
+      <Filter>Engine\Core\Managers\CommunicationManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Core\Utils\ISubscriber.h">
+      <Filter>Engine\Core\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Core\Managers\LogManager\LogManager.h">
+      <Filter>Engine\Core\Managers\LogManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Core\Utils\ISender.h">
+      <Filter>Engine\Core\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Core\Utils\Message\Message.h">
+      <Filter>Engine\Core\Utils\Message</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Core\Utils\Message\MessageGroup.h">
+      <Filter>Engine\Core\Utils\Message</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Core\Utils\Message\MessageCodes.h">
+      <Filter>Engine\Core\Utils\Message</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Core\Managers\LogManager\LogManagerMode.h">
+      <Filter>Engine\Core\Managers\LogManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Engine.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
