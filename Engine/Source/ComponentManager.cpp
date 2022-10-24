@@ -1,6 +1,8 @@
 #pragma once
 #include "ComponentManager.h"
-#include "ComponentArray/ComponentArray.h"
+
+#include "ComponentArray.h"
+
 #include <memory>
 #include <Globals.h>
 

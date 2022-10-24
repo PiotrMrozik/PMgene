@@ -71,24 +71,20 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>
-    </IncludePath>
-    <ExternalIncludePath>$(ProjectDir)\Engine\Core\Utils;$(ProjectDir)\Engine\Core\Utils\Message;$(ProjectDir)\Engine\Core\System;$(ProjectDir)\Engine\Core\Component;$(ProjectDir)\Engine\Core\Managers;$(ExternalIncludePath)</ExternalIncludePath>
+    <IncludePath>C:\Users\Piotr Mrozik\source\repos\PMgene\Engine\Source;C:\Users\Piotr Mrozik\source\repos\PMgene\Engine\Include</IncludePath>
+    <ExternalIncludePath>$(ExternalIncludePath)</ExternalIncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>
-    </IncludePath>
-    <ExternalIncludePath>$(ProjectDir)\Engine\Core\Utils;$(ProjectDir)\Engine\Core\Utils\Message;$(ProjectDir)\Engine\Core\System;$(ProjectDir)\Engine\Core\Component;$(ProjectDir)\Engine\Core\Managers;$(ExternalIncludePath)</ExternalIncludePath>
+    <IncludePath>C:\Users\Piotr Mrozik\source\repos\PMgene\Engine\Source;C:\Users\Piotr Mrozik\source\repos\PMgene\Engine\Include</IncludePath>
+    <ExternalIncludePath>$(ExternalIncludePath)</ExternalIncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>
-    </IncludePath>
-    <ExternalIncludePath>$(ProjectDir)\Engine\Core\Utils;$(ProjectDir)\Engine\Core\Utils\Message;$(ProjectDir)\Engine\Core\System;$(ProjectDir)\Engine\Core\Component;$(ProjectDir)\Engine\Core\Managers;$(ExternalIncludePath)</ExternalIncludePath>
+    <IncludePath>C:\Users\Piotr Mrozik\source\repos\PMgene\Engine\Source;C:\Users\Piotr Mrozik\source\repos\PMgene\Engine\Include</IncludePath>
+    <ExternalIncludePath>$(ExternalIncludePath)</ExternalIncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>
-    </IncludePath>
-    <ExternalIncludePath>$(ProjectDir)\Engine\Core\Utils;$(ProjectDir)\Engine\Core\Utils\Message;$(ProjectDir)\Engine\Core\System;$(ProjectDir)\Engine\Core\Component;$(ProjectDir)\Engine\Core\Managers;$(ExternalIncludePath)</ExternalIncludePath>
+    <IncludePath>C:\Users\Piotr Mrozik\source\repos\PMgene\Engine\Source;C:\Users\Piotr Mrozik\source\repos\PMgene\Engine\Include</IncludePath>
+    <ExternalIncludePath>$(ExternalIncludePath)</ExternalIncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -97,6 +93,7 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -112,6 +109,7 @@
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -127,6 +125,7 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -142,6 +141,7 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -151,38 +151,37 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Engine\Core\Component\Component.cpp" />
-    <ClCompile Include="Engine\Core\Component\ComponentArray\ComponentArray.cpp" />
-    <ClCompile Include="Engine\Core\Component\ComponentArray\IComponentArray.cpp" />
-    <ClCompile Include="Engine\Core\Managers\CommunicationManager\CommunicationManager.cpp" />
-    <ClCompile Include="Engine\Core\Managers\ComponentManager\ComponentManager.cpp" />
-    <ClCompile Include="Engine\Core\Managers\EntityManager\EntityManager.cpp" />
-    <ClCompile Include="Engine\Core\Managers\LogManager\LogManager.cpp" />
-    <ClCompile Include="Engine\Core\Managers\SystemManager\SystemManager.cpp" />
-    <ClCompile Include="Engine\Core\System\ISystem.cpp" />
-    <ClCompile Include="Engine\Core\Utils\ISender.cpp" />
-    <ClCompile Include="Engine\Core\Utils\ISubscriber.cpp" />
-    <ClCompile Include="Engine\Core\Utils\Message\Message.cpp" />
-    <ClCompile Include="Engine\Engine.cpp" />
+    <ClCompile Include="Engine\Source\CommunicationManager.cpp" />
+    <ClCompile Include="Engine\Source\Component.cpp" />
+    <ClCompile Include="Engine\Source\ComponentArray.cpp" />
+    <ClCompile Include="Engine\Source\ComponentManager.cpp" />
+    <ClCompile Include="Engine\Source\Engine.cpp" />
+    <ClCompile Include="Engine\Source\EntityManager.cpp" />
+    <ClCompile Include="Engine\Source\IComponentArray.cpp" />
+    <ClCompile Include="Engine\Source\ISender.cpp" />
+    <ClCompile Include="Engine\Source\ISubscriber.cpp" />
+    <ClCompile Include="Engine\Source\LogManager.cpp" />
+    <ClCompile Include="Engine\Source\Message.cpp" />
+    <ClCompile Include="SystemManager.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Engine\Core\Component\Component.h" />
-    <ClInclude Include="Engine\Core\Component\ComponentArray\ComponentArray.h" />
-    <ClInclude Include="Engine\Core\Component\ComponentArray\IComponentArray.h" />
-    <ClInclude Include="Engine\Core\Managers\CommunicationManager\CommunicationManager.h" />
-    <ClInclude Include="Engine\Core\Managers\ComponentManager\ComponentManager.h" />
-    <ClInclude Include="Engine\Core\Managers\EntityManager\EntityManager.h" />
-    <ClInclude Include="Engine\Core\Managers\LogManager\LogManager.h" />
-    <ClInclude Include="Engine\Core\Managers\LogManager\LogManagerMode.h" />
-    <ClInclude Include="Engine\Core\Managers\SystemManager\SystemManager.h" />
-    <ClInclude Include="Engine\Core\System\ISystem.h" />
-    <ClInclude Include="Engine\Core\Utils\Globals.h" />
-    <ClInclude Include="Engine\Core\Utils\ISender.h" />
-    <ClInclude Include="Engine\Core\Utils\ISubscriber.h" />
-    <ClInclude Include="Engine\Core\Utils\Message\Message.h" />
-    <ClInclude Include="Engine\Core\Utils\Message\MessageCodes.h" />
-    <ClInclude Include="Engine\Core\Utils\Message\MessageGroup.h" />
-    <ClInclude Include="Engine\Engine.h" />
+    <ClInclude Include="Engine\Include\CommunicationManager.h" />
+    <ClInclude Include="Engine\Include\Component.h" />
+    <ClInclude Include="Engine\Include\ComponentArray.h" />
+    <ClInclude Include="Engine\Include\ComponentManager.h" />
+    <ClInclude Include="Engine\Include\Engine.h" />
+    <ClInclude Include="Engine\Include\EntityManager.h" />
+    <ClInclude Include="Engine\Include\Globals.h" />
+    <ClInclude Include="Engine\Include\IComponentArray.h" />
+    <ClInclude Include="Engine\Include\ISender.h" />
+    <ClInclude Include="Engine\Include\ISubscriber.h" />
+    <ClInclude Include="Engine\Include\ISystem.h" />
+    <ClInclude Include="Engine\Include\LogManager.h" />
+    <ClInclude Include="Engine\Include\LogManagerMode.h" />
+    <ClInclude Include="Engine\Include\Message.h" />
+    <ClInclude Include="Engine\Include\MessageCodes.h" />
+    <ClInclude Include="Engine\Include\MessageGroup.h" />
+    <ClInclude Include="Engine\Include\SystemManager.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

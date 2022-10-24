@@ -1,7 +1,8 @@
 #pragma once
-#include <memory>
 
 #include "ISubscriber.h"
+
+#include <memory>
 
 namespace PMgene::Core
 {

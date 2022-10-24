@@ -1,7 +1,9 @@
 #pragma once
-#include <string>
 #include "MessageCodes.h"
 #include "MessageGroup.h"
+
+
+#include <string>
 
 namespace PMgene::Core
 {
@@ -9,10 +11,11 @@ namespace PMgene::Core
 	{
 	public:
 		Message(MessageGroup inputGroup, MessageCode inputCode, std::string sender);
+		Message();
 
 		[[nodiscard]] MessageGroup GetGroup() const;
 
-		[[nodiscard]] MessageCodes GetCode() const;
+		[[nodiscard]] MessageCode GetCode() const;
 
 		[[nodiscard]] time_t GetTimeStamp() const;
 

@@ -1,6 +1,8 @@
 #pragma once
-#include <chrono>
+
 #include "Message.h"
+
+#include <chrono>
 
 namespace PMgene::Core
 {
@@ -11,15 +13,19 @@ namespace PMgene::Core
 	{
 		timeStamp = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
 	}
-
+	
 	MessageGroup Message::GetGroup() const
 	{
 		return group;
 	}
-
-	MessageCodes Message::GetCode() const
+	
+	MessageCode Message::GetCode() const
 	{
 		return code;
+	}
+
+	Message::Message()
+	{
 	}
 
 	time_t Message::GetTimeStamp() const

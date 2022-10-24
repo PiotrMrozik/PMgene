@@ -1,11 +1,11 @@
 #pragma once
 #include "ISender.h"
 
+#include "Message.h"
+#include "CommunicationManager.h"
+
 #include <memory>
 #include <string>
-
-#include "Message.h"
-#include "CommunicationManager/CommunicationManager.h"
 
 namespace PMgene::Core
 {

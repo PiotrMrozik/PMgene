@@ -1,16 +1,21 @@
 #pragma once
-#include <array>
 
-#include "CommunicationManager/CommunicationManager.h"
+#include "CommunicationManager.h"
 #include "Globals.h"
-#include "ISender.h"
 #include "ISubscriber.h"
+#include "ISender.h"
+
+#include <array>
+#include <memory>
+#include <queue>
+
+
 
 
 namespace PMgene::Core
 {
 
-	class EntityManager : public ISender, public ISubscriber
+	class EntityManager : public ISubscriber, public ISender
 	{
 	public:
 		explicit EntityManager(const std::shared_ptr<CommunicationManager>& communicationManagerInput);

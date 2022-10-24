@@ -1,9 +1,10 @@
 #pragma once
-#include <memory>
-#include <string>
 
 #include "Message.h"
-#include "CommunicationManager/CommunicationManager.h"
+#include "CommunicationManager.h"
+
+#include <memory>
+#include <string>
 
 namespace PMgene::Core
 {

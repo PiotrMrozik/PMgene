@@ -1,11 +1,8 @@
 #pragma once
+
 #include "CommunicationManager.h"
 
-#include <memory>
 #include <unordered_set>
-#include <vector>
-
-#include "MessageGroup.h"
 
 namespace PMgene::Core
 {
@@ -16,8 +13,8 @@ namespace PMgene::Core
 			std::vector<std::shared_ptr<ISubscriber>> groupSubscribers;
 			messageGroupsSubscribers.emplace_back(groupSubscribers);
 		}
-
-		for (int i = 0; i < static_cast<int>(MessageCodesCount); i++)
+		
+		for (int i = 0; i < static_cast<int>(MessageCode::MessageCodesCount); i++)
 		{
 			std::vector<std::shared_ptr<ISubscriber>> codeSubscribers;
 			messageCodesSubscribers.emplace_back(codeSubscribers);
@@ -52,14 +49,14 @@ namespace PMgene::Core
 			{
 				subscribers.insert(subscriber);
 			}
-
+		
 			// Get ID of collection from MessageCode enum and then push to set of unique subscribers.
 			const int codeID = messageToSend->GetCode();
 			for (const auto& subscriber : messageCodesSubscribers[codeID])
 			{
 				subscribers.insert(subscriber);
 			}
-
+		
 			//Send message to all unique subscribers.
 			for (const auto& subscriber : subscribers)
 			{

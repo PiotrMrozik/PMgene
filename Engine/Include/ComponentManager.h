@@ -1,9 +1,10 @@
 #pragma once
-#include <memory>
-#include <unordered_map>
 
 #include "Globals.h"
-#include "ComponentArray/ComponentArray.h"
+#include "ComponentArray.h"
+
+#include <memory>
+#include <unordered_map>
 
 namespace PMgene::Core
 {

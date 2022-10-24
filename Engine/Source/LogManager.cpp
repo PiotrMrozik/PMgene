@@ -7,7 +7,6 @@
 #include <memory>
 #include <sstream>
 
-#include "Message.h"
 
 
 namespace PMgene::Core
@@ -15,7 +14,7 @@ namespace PMgene::Core
 	LogManager::LogManager(const LogManagerMode logManagerModeInput):
 		logManagerMode(logManagerModeInput)
 	{
-		PrintLog(std::make_shared<Message>(INFO, MC_MANAGER_INITIALIZED, "LogManager"));
+		PrintLog(std::make_shared<Message>(MG_INFO, MC_MANAGER_INITIALIZED, "LogManager"));
 	}
 
 	void LogManager::Update()
@@ -94,19 +93,19 @@ namespace PMgene::Core
 	{
 		switch (group)
 		{
-		case INFO:
+		case MG_INFO:
 			{
 				return " \x1B[32m[INFO]\033[0m";
 			}
-		case COMMAND:
+		case MG_COMMAND:
 			{
 				return " \x1B[34m[COMMAND]\033[0m";
 			}
-		case WARNING:
+		case MG_WARNING:
 			{
 				return " \x1B[33m[WARNING]\033[0m";
 			}
-		case ERROR:
+		case MG_ERROR:
 			{
 				return " \x1B[31m[ERROR]\033[0m";
 			}

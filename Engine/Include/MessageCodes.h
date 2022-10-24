@@ -1,0 +1,40 @@
+#pragma once
+
+namespace PMgene::Core
+{
+	typedef enum MessageCodes
+	{
+		MC_ENTITY_CREATED,
+		MC_ENTITY_DESTROYED,
+		MC_ENTITY_MAX_LIMIT_REACHED,
+
+		MC_COMPONENT_REGISTERED,
+		MC_COMPONENT_REMOVED,
+		MC_COMPONENT_ADDED_TO_ENTITY,
+
+		MC_SYSTEM_REGISTERED,
+		MC_SYSTEM_REMOVED,
+
+		MC_MANAGER_INITIALIZED,
+
+		MessageCodesCount
+	} MessageCode;
+
+	inline const char* to_string(MessageCode e)
+	{
+		switch (e)
+		{
+		case MC_ENTITY_CREATED: return "MC_ENTITY_CREATED";
+		case MC_ENTITY_DESTROYED: return "MC_ENTITY_DESTROYED";
+		case MC_ENTITY_MAX_LIMIT_REACHED: return "MC_ENTITY_MAX_LIMIT_REACHED";
+		case MC_COMPONENT_REGISTERED: return "MC_COMPONENT_REGISTERED";
+		case MC_COMPONENT_REMOVED: return "MC_COMPONENT_REMOVED";
+		case MC_COMPONENT_ADDED_TO_ENTITY: return "MC_COMPONENT_ADDED_TO_ENTITY";
+		case MC_SYSTEM_REGISTERED: return "MC_SYSTEM_REGISTERED";
+		case MC_SYSTEM_REMOVED: return "MC_SYSTEM_REMOVED";
+		case MC_MANAGER_INITIALIZED: return "MC_MANAGER_INITIALIZED";
+		case MessageCodesCount: return "MessageCodesCount";
+		}
+		return nullptr;
+	}
+}

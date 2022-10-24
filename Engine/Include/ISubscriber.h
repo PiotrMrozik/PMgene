@@ -1,8 +1,9 @@
 #pragma once
-#include <memory>
-#include <queue>
 
 #include "Message.h"
+
+#include <memory>
+#include <queue>
 
 namespace PMgene::Core
 {
