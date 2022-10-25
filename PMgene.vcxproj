@@ -126,6 +126,7 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <AdditionalIncludeDirectories>C:\Users\Piotr Mrozik\source\repos\PMath</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -182,6 +183,11 @@
     <ClInclude Include="Engine\Include\MessageCodes.h" />
     <ClInclude Include="Engine\Include\MessageGroup.h" />
     <ClInclude Include="Engine\Include\SystemManager.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PMath\PMath.vcxproj">
+      <Project>{ec7670d2-7f92-44fb-a9f5-8d140eced22f}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

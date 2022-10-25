@@ -4,6 +4,7 @@
 #include "CommunicationManager.h"
 #include "EntityManager.h"
 #include "LogManager.h"
+#include "PMath.h"
 
 namespace PMgene
 {
