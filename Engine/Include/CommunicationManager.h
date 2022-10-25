@@ -9,11 +9,10 @@ namespace PMgene::Core
 	class CommunicationManager
 	{
 	public:
+
 		CommunicationManager();
 
-		void SubscribeToGroup(const std::shared_ptr<ISubscriber>& subscriber, MessageGroup group);
-
-		void SubscribeToCode(const std::shared_ptr<ISubscriber>& subscriber, MessageCode code);
+		void MakeSubscriptions(const std::shared_ptr<ISubscriber>& subscriber);
 
 		void SendNextMessageToSubscribers();
 

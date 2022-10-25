@@ -21,16 +21,20 @@ namespace PMgene::Core
 		}
 	}
 
-
-	void CommunicationManager::SubscribeToGroup(const std::shared_ptr<ISubscriber>& subscriber, MessageGroup group)
+	void CommunicationManager::MakeSubscriptions(const std::shared_ptr<ISubscriber>& subscriber)
 	{
-		messageGroupsSubscribers[static_cast<int>(group)].emplace_back(subscriber);
+		for (const auto messageCode : subscriber->GetMessageCodesSubscriptions())
+		{
+			messageCodesSubscribers[static_cast<int>(messageCode)].emplace_back(subscriber);
+		}
+
+		for (const auto messageGroup : subscriber->GetMessageGroupsSubscriptions())
+		{
+			messageGroupsSubscribers[static_cast<int>(messageGroup)].emplace_back(subscriber);
+		}
+		
 	}
 
-	void CommunicationManager::SubscribeToCode(const std::shared_ptr<ISubscriber>& subscriber, MessageCode code)
-	{
-		messageCodesSubscribers[static_cast<int>(code)].emplace_back(subscriber);
-	}
 
 	void CommunicationManager::SendNextMessageToSubscribers()
 	{
@@ -67,7 +71,7 @@ namespace PMgene::Core
 
 	void CommunicationManager::SendMessageToSubscriber(std::shared_ptr<Message> message, const std::shared_ptr<ISubscriber>& subscriber)
 	{
-		subscriber->GetMessage(message);
+		subscriber->PushMessageToQueue(message);
 	}
 
 	void CommunicationManager::PushMessage(const std::shared_ptr<Message>& message)

@@ -14,6 +14,10 @@ namespace PMgene::Core
 	LogManager::LogManager(const LogManagerMode logManagerModeInput):
 		logManagerMode(logManagerModeInput)
 	{
+		messageGroupsToSubscribe.emplace_back(MG_INFO);
+		messageGroupsToSubscribe.emplace_back(MG_WARNING);
+		messageGroupsToSubscribe.emplace_back(MG_ERROR);
+
 		PrintLog(std::make_shared<Message>(MG_INFO, MC_MANAGER_INITIALIZED, "LogManager"));
 	}
 
