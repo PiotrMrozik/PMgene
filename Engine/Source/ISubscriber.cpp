@@ -19,7 +19,7 @@ namespace PMgene::Core
 		return nullptr;
 	}
 
-	void ISubscriber::GetMessage(std::shared_ptr<Message> message)
+	void ISubscriber::GetMessageToQueue(std::shared_ptr<Message> message)
 	{
 		messageQueue.push(message);
 	}

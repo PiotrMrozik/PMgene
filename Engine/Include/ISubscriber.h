@@ -13,7 +13,7 @@ namespace PMgene::Core
 		ISubscriber();
 		std::shared_ptr<Message> GetNewestMessage();
 
-		void GetMessage(std::shared_ptr<Message> message);
+		void GetMessageToQueue(std::shared_ptr<Message> message);
 
 	private:
 		std::queue<std::shared_ptr<Message>> messageQueue;
