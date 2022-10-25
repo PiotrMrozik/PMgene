@@ -12,10 +12,12 @@
 namespace PMgene::Core
 {
 	
-	class ComponentManager : public ISubscriber, public ISender
+	class ComponentManager final : public ISubscriber, public ISender
 	{
 	public:
-		ComponentManager(const std::shared_ptr<CommunicationManager>& communicationManagerInput, const std::string& name);
+		ComponentManager(const std::shared_ptr<CommunicationManager>& communicationManagerInput);
+
+		~ComponentManager() override;
 
 		template <typename T>
 		void RegisterComponent();
@@ -24,16 +26,7 @@ namespace PMgene::Core
 		ComponentType GetComponentType();
 
 		template <typename T>
-		void AddComponent(Entity entity, T component);
-
-		template <typename T>
-		void RemoveComponent(Entity entity);
-
-		template <typename T>
 		T& GetComponent(Entity entity);
-
-		void EntityDestroyed(Entity entity);
-
 
 	private:
 		// Map from type string pointer to a component type
@@ -45,8 +38,18 @@ namespace PMgene::Core
 		// The component type to be assigned to the next registered component - starting at 0
 		ComponentType nextComponentType{};
 
+		void ProcessLastMessage() override;
+
 		template <typename T>
-		std::shared_ptr<ComponentArray<T>> GetComponentArray();
+		void AddComponent(Entity entity, T component);
+
+		template <typename T>
+		void RemoveComponent(Entity entity);
+
+		void EntityDestroyed(Entity entity);
+
+		template <typename T>
+		std::shared_ptr<ComponentArray<T>> GetComponentArray();		
 	};
 
 

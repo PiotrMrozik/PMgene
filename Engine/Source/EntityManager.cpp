@@ -49,6 +49,7 @@ namespace PMgene::Core
  		// Put the destroyed ID at the back of the queue
  		availableEntities.push(entity);
  		--livingEntityCount;
+        SendMessage(std::make_shared<Message>(MG_INFO, MC_ENTITY_DESTROYED, senderName));
  	}
  
  	void EntityManager::SetSignature(const Entity entity, const EntitySignature signature)

@@ -2,6 +2,7 @@
 #include <memory>
 
 #include "CommunicationManager.h"
+#include "ComponentManager.h"
 #include "EntityManager.h"
 #include "LogManager.h"
 #include "PMath.h"
@@ -26,5 +27,6 @@ namespace PMgene
 		std::shared_ptr<Core::CommunicationManager> communicationManager;
 		std::shared_ptr<Core::LogManager> loggerManager;
 		std::shared_ptr<Core::EntityManager> entityManager;
+		std::shared_ptr<Core::ComponentManager> componentManager;
 	};
 }

@@ -9,10 +9,19 @@
 namespace PMgene::Core
 {
 	ComponentManager::ComponentManager(
-		const std::shared_ptr<CommunicationManager>& communicationManagerInput,
-		const std::string& name) :
-		ISender(communicationManagerInput, name)
+		const std::shared_ptr<CommunicationManager>& communicationManagerInput) :
+		ISender(communicationManagerInput, "ComponentManager")
 	{
+		messageCodesToSubscribe.emplace_back(MC_ENTITY_DESTROYED);
+	}
+
+	ComponentManager::~ComponentManager()
+	{
+	}
+
+	void ComponentManager::ProcessLastMessage()
+	{
+		auto messageToProcess = GetNewestMessage();
 
 	}
 
