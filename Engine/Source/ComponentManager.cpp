@@ -8,9 +8,28 @@
 
 namespace PMgene::Core
 {
-	template <typename ComponentType>
+	ComponentManager::ComponentManager(
+		const std::shared_ptr<CommunicationManager>& communicationManagerInput,
+		const std::string& name) :
+		ISender(communicationManagerInput, name)
+	{
+
+	}
+
+	void ComponentManager::EntityDestroyed(Entity entity)
+	{
+		// Notify each component array that an entity has been destroyed
+		// If it has a component for that entity, it will remove it
+		for (const auto& pair : componentArrays)
+		{
+			const auto& component = pair.second;
+			component->EntityDestroyed(entity);
+			//component->EntityDestroyed(entity);
+		}
+	}
+
 	template <typename T>
-	void ComponentManager<ComponentType>::RegisterComponent()
+	void ComponentManager::RegisterComponent()
 	{
 		const char* typeName = typeid(T).name();
 
@@ -26,9 +45,8 @@ namespace PMgene::Core
 		++nextComponentType;
 	}
 
-	template <typename ComponentType>
 	template <typename T>
-	ComponentType ComponentManager<ComponentType>::GetComponentType()
+	ComponentType ComponentManager::GetComponentType()
 	{
 		const char* typeName = typeid(T).name();
 
@@ -38,46 +56,29 @@ namespace PMgene::Core
 		return componentTypes[typeName];
 	}
 
-	template <typename ComponentType>
 	template <typename T>
-	void ComponentManager<ComponentType>::AddComponent(Entity entity, T component)
+	void ComponentManager::AddComponent(Entity entity, T component)
 	{
 		// Add a component to the array for an entity
 		GetComponentArray<T>()->InsertData(entity, component);
 	}
 
-	template <typename ComponentType>
 	template <typename T>
-	void ComponentManager<ComponentType>::RemoveComponent(Entity entity)
+	void ComponentManager::RemoveComponent(Entity entity)
 	{
 		// Remove a component from the array for an entity
 		GetComponentArray<T>()->RemoveData(entity);
 	}
 
-	template <typename ComponentType>
 	template <typename T>
-	T& ComponentManager<ComponentType>::GetComponent(Entity entity)
+	T& ComponentManager::GetComponent(Entity entity)
 	{
 		// Get a reference to a component from the array for an entity
 		return GetComponentArray<T>()->GetData(entity);
 	}
 
-	template <typename ComponentType>
-	void ComponentManager<ComponentType>::EntityDestroyed(Entity entity)
-	{
-		// Notify each component array that an entity has been destroyed
-		// If it has a component for that entity, it will remove it
-		for (auto const& pair : componentArrays)
-		{
-			auto const& component = pair;
-
-			component->EntityDestroyed(entity);
-		}
-	}
-
-	template <typename ComponentType>
 	template <typename T>
-	std::shared_ptr<ComponentArray<T>> ComponentManager<ComponentType>::GetComponentArray()
+	std::shared_ptr<ComponentArray<T>> ComponentManager::GetComponentArray()
 	{
 		const char* typeName = typeid(T).name();
 

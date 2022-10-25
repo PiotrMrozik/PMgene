@@ -6,12 +6,17 @@
 #include <memory>
 #include <unordered_map>
 
+#include "ISender.h"
+#include "ISubscriber.h"
+
 namespace PMgene::Core
 {
-	template <typename ComponentType>
-	class ComponentManager
+	
+	class ComponentManager : public ISubscriber, public ISender
 	{
 	public:
+		ComponentManager(const std::shared_ptr<CommunicationManager>& communicationManagerInput, const std::string& name);
+
 		template <typename T>
 		void RegisterComponent();
 
@@ -43,4 +48,6 @@ namespace PMgene::Core
 		template <typename T>
 		std::shared_ptr<ComponentArray<T>> GetComponentArray();
 	};
+
+
 }
