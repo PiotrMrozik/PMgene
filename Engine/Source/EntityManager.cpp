@@ -34,9 +34,9 @@ namespace PMgene::Core
  			const Entity entity = availableEntities.front();
  			availableEntities.pop();
  			++livingEntityCount;
- 
+            
  			//Send Info about creation
- 			SendMessage(std::make_shared<Message>(MG_INFO, MC_ENTITY_CREATED, "Entity Manager"));
+ 			SendMessage(std::make_shared<Message>(MG_INFO, MC_ENTITY_CREATED, senderName, (Entity*)entity));
  			return entity;
  		}
  		return -1;
@@ -49,7 +49,7 @@ namespace PMgene::Core
  		// Put the destroyed ID at the back of the queue
  		availableEntities.push(entity);
  		--livingEntityCount;
-        SendMessage(std::make_shared<Message>(MG_INFO, MC_ENTITY_DESTROYED, senderName));
+        SendMessage(std::make_shared<Message>(MG_INFO, MC_ENTITY_DESTROYED, senderName, (Entity*)entity));
  	}
  
  	void EntityManager::SetSignature(const Entity entity, const EntitySignature signature)

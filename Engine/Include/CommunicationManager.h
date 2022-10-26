@@ -16,11 +16,13 @@ namespace PMgene::Core
 
 		void SendNextMessageToSubscribers();
 
+
 		void SendMessageToSubscriber(std::shared_ptr<Message> message, const std::shared_ptr<ISubscriber>& subscriber);
 
 		void PushMessage(const std::shared_ptr<Message>& message);
 
 	private:
+
 		std::queue<std::shared_ptr<Message>> messageQueue;
 
 		std::vector<std::vector<std::shared_ptr<ISubscriber>>> messageGroupsSubscribers;

@@ -35,7 +35,6 @@ namespace PMgene::Core
 		
 	}
 
-
 	void CommunicationManager::SendNextMessageToSubscribers()
 	{
 		// Check if there is a message to send.
@@ -68,12 +67,10 @@ namespace PMgene::Core
 			}
 		}
 	}
-
 	void CommunicationManager::SendMessageToSubscriber(std::shared_ptr<Message> message, const std::shared_ptr<ISubscriber>& subscriber)
 	{
 		subscriber->PushMessageToQueue(message);
 	}
-
 	void CommunicationManager::PushMessage(const std::shared_ptr<Message>& message)
 	{
 		messageQueue.push(message);
