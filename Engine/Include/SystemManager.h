@@ -24,6 +24,7 @@ namespace PMgene::Core
 		void EntityDestroyed(Entity entity);
 
 		void EntitySignatureChanged(Entity entity, EntitySignature entitySignature);
+		
 
 	private:
 		// Map from system type string pointer to a signature
@@ -31,5 +32,7 @@ namespace PMgene::Core
 
 		// Map from system type string pointer to a system pointer
 		std::unordered_map<const char*, std::shared_ptr<ISystem>> systems{};
+
+		void ProcessLastMessage() override;
 	};
 }

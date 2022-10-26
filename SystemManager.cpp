@@ -60,4 +60,19 @@ namespace PMgene::Core
 			}
 		}
 	}
+
+	void SystemManager::ProcessLastMessage()
+	{
+		const auto messageToProcess = GetNewestMessage();
+
+		switch (messageToProcess->GetCode())
+		{
+		case MC_ENTITY_DESTROYED:
+		{
+			EntityDestroyed(reinterpret_cast<Entity>(messageToProcess->GetFirstArgument()));
+			break;
+		}
+		default:;
+		}
+	}
 }
