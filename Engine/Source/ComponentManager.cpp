@@ -21,8 +21,17 @@ namespace PMgene::Core
 
 	void ComponentManager::ProcessLastMessage()
 	{
-		auto messageToProcess = GetNewestMessage();
+		const auto messageToProcess = GetNewestMessage();
 
+		switch (messageToProcess->GetCode())
+		{
+		case MC_ENTITY_DESTROYED: 
+		{
+			//EntityDestroyed();
+			break;
+		}
+		default: ;
+		}
 	}
 
 	void ComponentManager::EntityDestroyed(Entity entity)
@@ -45,10 +54,10 @@ namespace PMgene::Core
 		//assert(mComponentTypes.find(typeName) == mComponentTypes.end() && "Registering component type more than once.");
 
 		// Add this component type to the component type map
-		componentTypes.insert({ typeName, nextComponentType });
+		componentTypes.insert({typeName, nextComponentType});
 
 		// Create a ComponentArray pointer and add it to the component arrays map
-		componentArrays.insert({ typeName, std::make_shared<ComponentArray<T>>() });
+		componentArrays.insert({typeName, std::make_shared<ComponentArray<T>>()});
 
 		// Increment the value so that the next component registered will be different
 		++nextComponentType;

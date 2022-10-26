@@ -13,7 +13,7 @@ namespace PMgene::Core
 	class SystemManager : public ISubscriber, public ISender
 	{
 	public:
-		SystemManager(const std::shared_ptr<CommunicationManager>& communicationManagerInput, const std::string& name);
+		SystemManager(const std::shared_ptr<CommunicationManager>& communicationManagerInput);
 
 		template <typename T>
 		std::shared_ptr<T> RegisterSystem();

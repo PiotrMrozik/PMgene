@@ -3,10 +3,10 @@
 namespace PMgene::Core
 {
 	SystemManager::SystemManager(
-		const std::shared_ptr<CommunicationManager>& communicationManagerInput,
-		const std::string& name) :
-		ISender(communicationManagerInput, name)
+		const std::shared_ptr<CommunicationManager>& communicationManagerInput) :
+		ISender(communicationManagerInput, "SystemManager")
 	{
+		messageCodesToSubscribe.emplace_back(MC_ENTITY_DESTROYED);
 	}
 
 	template <typename T>
