@@ -7,6 +7,7 @@
 #include <memory>
 #include <sstream>
 
+#include "Globals.h"
 
 
 namespace PMgene::Core
@@ -36,10 +37,17 @@ namespace PMgene::Core
 		{
 		case MC_ENTITY_CREATED:
 			{
-				log = CreatePrefix(message) + "Entity created by " + message->GetSenderName();
+				log = CreatePrefix(message) + "Entity ID: "+ std::to_string(reinterpret_cast<Entity>(message->GetFirstArgument())) + " created by " + message->GetSenderName();
+				//delete dataPtr;
 				break;
 			}
-		case MC_ENTITY_DESTROYED: break;
+		case MC_ENTITY_DESTROYED: 
+		{
+			log = CreatePrefix(message) + "Entity ID: " + std::to_string(reinterpret_cast<Entity>(message->GetFirstArgument())) + " destroyed by " + message->GetSenderName();
+			//delete dataPtr;
+			break;
+		}
+
 		case MC_COMPONENT_REGISTERED: break;
 		case MC_COMPONENT_REMOVED: break;
 		case MC_COMPONENT_ADDED_TO_ENTITY: break;
@@ -67,7 +75,8 @@ namespace PMgene::Core
 		{
 		case LogManagerMode::CONSOLE:
 			{
-				std::cout << log << std::endl;
+				//printf(" %s", log.c_str());
+				std::cout << log << '\n';
 				break;
 			}
 		case LogManagerMode::GUI:
@@ -99,23 +108,28 @@ namespace PMgene::Core
 		{
 		case MG_INFO:
 			{
-				return " \x1B[32m[INFO]\033[0m";
+				//return " \x1B[32m[INFO]\033[0m";
+			return "[INFO]";
 			}
 		case MG_COMMAND:
 			{
-				return " \x1B[34m[COMMAND]\033[0m";
+				//return " \x1B[34m[COMMAND]\033[0m";
+			return "[COMMAND]";
 			}
 		case MG_WARNING:
 			{
-				return " \x1B[33m[WARNING]\033[0m";
+				//return " \x1B[33m[WARNING]\033[0m";
+			return "[WARNING]";
 			}
 		case MG_ERROR:
 			{
-				return " \x1B[31m[ERROR]\033[0m";
+				//return " \x1B[31m[ERROR]\033[0m";
+			return "[ERROR]";
 			}
 		case MessageGroupCount:
 			{
-				return " \x1B[31m[ERROR]\033[0m";
+				//return " \x1B[31m[ERROR]\033[0m";
+			return "[ERROR]";
 			}
 		}
 		return "";
