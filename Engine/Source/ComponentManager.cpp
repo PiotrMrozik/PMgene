@@ -27,7 +27,7 @@ namespace PMgene::Core
 		{
 		case MC_ENTITY_DESTROYED: 
 		{
-			//EntityDestroyed();
+			EntityDestroyed(reinterpret_cast<Entity>(messageToProcess->GetFirstArgument()));
 			break;
 		}
 		default: ;
@@ -61,6 +61,8 @@ namespace PMgene::Core
 
 		// Increment the value so that the next component registered will be different
 		++nextComponentType;
+
+		SendMessage(std::make_shared<Message>(MG_INFO, MC_COMPONENT_REGISTERED, senderName, const_cast<char*>(typeName)));
 	}
 
 	template <typename T>
