@@ -13,6 +13,7 @@ namespace PMgene::Core
 		ISender(communicationManagerInput, "ComponentManager")
 	{
 		messageCodesToSubscribe.emplace_back(MC_ENTITY_DESTROYED);
+		SendMessage(std::make_shared<Message>(MG_INFO, MC_MANAGER_INITIALIZED, senderName));
 	}
 
 	ComponentManager::~ComponentManager()
