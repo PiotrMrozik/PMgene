@@ -97,6 +97,9 @@
     <Filter Include="Source Files\Engine\Core\Managers\RenderManager">
       <UniqueIdentifier>{3a941936-1f1c-49d6-94c6-7ed6fc7d5bed}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Engine\Core\Utils\DirectX">
+      <UniqueIdentifier>{0d9117ec-f222-4769-84b6-e953d75110ed}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Engine\Source\Engine.cpp">
@@ -193,6 +196,9 @@
     </ClInclude>
     <ClInclude Include="Engine\Include\RenderManager.h">
       <Filter>Source Files\Engine\Core\Managers\RenderManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Include\d3dx12.h">
+      <Filter>Source Files\Engine\Core\Utils\DirectX</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

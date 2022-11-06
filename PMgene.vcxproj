@@ -171,6 +171,7 @@
     <ClInclude Include="Engine\Include\Component.h" />
     <ClInclude Include="Engine\Include\ComponentArray.h" />
     <ClInclude Include="Engine\Include\ComponentManager.h" />
+    <ClInclude Include="Engine\Include\d3dx12.h" />
     <ClInclude Include="Engine\Include\Engine.h" />
     <ClInclude Include="Engine\Include\EntityManager.h" />
     <ClInclude Include="Engine\Include\Globals.h" />

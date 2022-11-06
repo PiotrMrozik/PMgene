@@ -7,6 +7,7 @@ namespace PMgene::Core
 		ISender(communicationManagerInput, "SystemManager")
 	{
 		messageCodesToSubscribe.emplace_back(MC_ENTITY_DESTROYED);
+		SendMessage(std::make_shared<Message>(MG_INFO, MC_MANAGER_INITIALIZED, senderName));
 	}
 
 	template <typename T>
