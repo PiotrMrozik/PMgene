@@ -28,6 +28,8 @@ namespace PMgene::Core
 		template <typename T>
 		T& GetComponent(Entity entity);
 
+		void EntityDestroyed(Entity entity);
+
 	private:
 		// Map from type string pointer to a component type
 		std::unordered_map<const char*, ComponentType> componentTypes{};
@@ -46,7 +48,7 @@ namespace PMgene::Core
 		template <typename T>
 		void RemoveComponent(Entity entity);
 
-		void EntityDestroyed(Entity entity);
+		
 
 		template <typename T>
 		std::shared_ptr<ComponentArray<T>> GetComponentArray();		

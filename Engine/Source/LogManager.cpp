@@ -49,7 +49,7 @@ namespace PMgene::Core
 		}
 
 		case MC_COMPONENT_REGISTERED: break;
-		case MC_COMPONENT_REMOVED: break;
+		case MC_COMPONENT_REMOVED_FROM_ENTITY: break;
 		case MC_COMPONENT_ADDED_TO_ENTITY: break;
 		case MC_SYSTEM_REGISTERED: break;
 		case MC_SYSTEM_REMOVED: break;

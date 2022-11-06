@@ -25,11 +25,11 @@ namespace PMgene::Core
 
 		switch (messageToProcess->GetCode())
 		{
-		case MC_ENTITY_DESTROYED: 
-		{
-			EntityDestroyed(reinterpret_cast<Entity>(messageToProcess->GetFirstArgument()));
-			break;
-		}
+		case MC_ENTITY_DESTROYED:
+			{
+				//EntityDestroyed(reinterpret_cast<Entity>(messageToProcess->GetFirstArgument()));
+			//	break;
+			}
 		default: ;
 		}
 	}
@@ -62,7 +62,8 @@ namespace PMgene::Core
 		// Increment the value so that the next component registered will be different
 		++nextComponentType;
 
-		SendMessage(std::make_shared<Message>(MG_INFO, MC_COMPONENT_REGISTERED, senderName, const_cast<char*>(typeName)));
+		SendMessage(
+			std::make_shared<Message>(MG_INFO, MC_COMPONENT_REGISTERED, senderName, const_cast<char*>(typeName)));
 	}
 
 	template <typename T>
@@ -81,6 +82,8 @@ namespace PMgene::Core
 	{
 		// Add a component to the array for an entity
 		GetComponentArray<T>()->InsertData(entity, component);
+		SendMessage(std::make_shared<Message>(MG_INFO, MC_COMPONENT_ADDED_TO_ENTITY, senderName, entity,
+		                                      GetComponentType<T>));
 	}
 
 	template <typename T>
