@@ -69,8 +69,15 @@ namespace PMgene::Core
 		{
 		case MC_ENTITY_DESTROYED:
 		{
-			EntityDestroyed(reinterpret_cast<Entity>(messageToProcess->GetFirstArgument()));
+			//EntityDestroyed(reinterpret_cast<Entity>(messageToProcess->GetFirstArgument()));
 			break;
+		}
+		case MC_ENTITY_SIGNATURE_CHANGED:
+		{
+			//const auto entity = reinterpret_cast<Entity>(messageToProcess->GetFirstArgument());
+			//const auto signature = static_cast<EntitySignature*>(messageToProcess->GetSecondArgument());
+
+			//EntitySignatureChanged(entity, *signature);
 		}
 		default:;
 		}

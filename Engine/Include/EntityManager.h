@@ -26,6 +26,9 @@ namespace PMgene::Core
 		[[nodiscard]] EntitySignature GetSignature(Entity entity) const;
 
 	private:
+
+		void ProcessLastMessage() override;
+
 		// Queue of unused entity IDs
 		std::queue<Entity> availableEntities{};
 

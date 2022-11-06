@@ -163,6 +163,7 @@
     <ClCompile Include="Engine\Source\ISubscriber.cpp" />
     <ClCompile Include="Engine\Source\LogManager.cpp" />
     <ClCompile Include="Engine\Source\Message.cpp" />
+    <ClCompile Include="Engine\Source\RenderManager.cpp" />
     <ClCompile Include="SystemManager.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -182,6 +183,7 @@
     <ClInclude Include="Engine\Include\Message.h" />
     <ClInclude Include="Engine\Include\MessageCodes.h" />
     <ClInclude Include="Engine\Include\MessageGroup.h" />
+    <ClInclude Include="Engine\Include\RenderManager.h" />
     <ClInclude Include="Engine\Include\SystemManager.h" />
   </ItemGroup>
   <ItemGroup>
